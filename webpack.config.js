@@ -1,5 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const cssnano = require("cssnano");
 
 module.exports = {
   entry: { main: './src/js/index.js' },
@@ -10,7 +12,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin({
        filename: '../css/style.css'
-    }),
+    })
   ],
   module: {
     rules: [
@@ -26,8 +28,28 @@ module.exports = {
         use: ExtractTextPlugin.extract(
           {
             fallback: 'style-loader',
-            use: ['css-loader', 'postcss-loader', 'sass-loader']
-          })
+            use: [          
+              {
+                loader: 'css-loader',
+                options: {
+                  minimize: true,
+                  sourceMap: true
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: true
+                }
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: true 
+                }
+              }
+            ]
+        })
       }
     ]
   }
