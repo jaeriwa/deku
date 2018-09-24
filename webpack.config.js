@@ -1,56 +1,38 @@
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const cssnano = require("cssnano");
+const 	path = require('path'),
+		ExtractTextPlugin = require('extract-text-webpack-plugin'),
+		OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
+		cssnano = require("cssnano");
 
-module.exports = {
-  entry: { main: './src/js/index.js' },
-  output: {
-    path: path.resolve(__dirname, './dist/js'),
-    filename: 'scripts.js'
-  },
-  plugins: [
-    new ExtractTextPlugin({
-       filename: '../css/style.css'
-    })
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },  
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract(
-          {
-            fallback: 'style-loader',
-            use: [          
-              {
-                loader: 'css-loader',
-                options: {
-                  minimize: true,
-                  sourceMap: true
-                }
-              },
-              {
-                loader: 'postcss-loader',
-                options: {
-                  sourceMap: true
-                }
-              },
-              {
-                loader: 'sass-loader',
-                options: {
-                  sourceMap: true 
-                }
-              }
-            ]
-        })
-      }
-    ]
-  }
-};
+	module.exports = {
+		entry: { main: './src/js/index.js' },
+		output: {
+			path: path.resolve(__dirname, './dist/js'),
+			filename: 'scripts.js'
+		},
+		plugins: [
+			new ExtractTextPlugin({
+				filename: '../css/style.css'
+			})
+		],
+		module: {
+			rules: [
+				{
+					test: /\.js$/,
+					exclude: /node_modules/,
+					use: {
+						loader: "babel-loader"
+					}
+				},
+				{
+					test: /\.scss$/,
+					use: ExtractTextPlugin.extract({
+						use: [
+							'css-loader',
+							'postcss-loader',
+							'sass-loader'
+						]
+					})
+				}
+			]
+		}
+	};
