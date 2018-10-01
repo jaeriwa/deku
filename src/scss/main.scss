@@ -1,2 +1,29 @@
 
-@import 'base/base';
+
+// Settings 
+// variables, fonts, etc.
+
+@import 'settings/settings';
+
+// Tools 
+
+@import 'tools/tools';
+
+// Generic/Vendors 
+
+@import '~normalize-scss/sass/normalize';
+@include normalize();
+
+// Elements 
+
+@import 'elements/elements';
+
+// Objects
+
+@import 'objects/objects';
+
+// Components
+
+@import 'components/components';
+
+// Utilities

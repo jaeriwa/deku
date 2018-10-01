@@ -1,0 +1,28 @@
+
+//Components
+
+.c-cta {
+
+	&--text {
+		border-bottom: 1px solid $baseFontColour;
+
+		&:hover {
+			border-bottom: 0;
+		}
+	}
+
+	&--box {
+		padding: 10px 20px;
+	}
+
+	&--black {
+		background-color: #000;
+		color: #fff;
+		border: 1px solid $baseFontColour;
+
+		&:hover {
+			background-color: transparent;
+			color: $baseFontColour;
+		}
+	}
+}
