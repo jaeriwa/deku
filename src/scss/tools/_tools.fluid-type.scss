@@ -1,9 +1,17 @@
 
-// Tools
+	// Tools
 
-// The calculation is 
-// calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+	// The calculation is 
+	// calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
 
-@mixin fluid-type($minimumSize, $maximumSize, $minimumVW, $maximumVW) {;
-	font-size: calc(#{$minimumSize} + #{strip-unit($maximumSize - $minimumSize)} * ((100vw - #{$minimumVW}) / #{strip-unit($maximumVW - $minimumVW)}));
-}
+	@mixin fluid-type($minimumSize, $maximumSize, $minimumVW, $maximumVW) {;
+		font-size: calc(#{$minimumSize} + #{strip-unit($maximumSize - $minimumSize)} * ((100vw - #{$minimumVW}) / #{strip-unit($maximumVW - $minimumVW)}));
+
+		@media screen and (max-width: $minimumVW) {
+			font-size: $minimumSize;
+		}
+
+		@media screen and (min-width: $maximumVW){
+			font-size: $maximumSize;
+		}
+	}

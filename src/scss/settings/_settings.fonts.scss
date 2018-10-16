@@ -4,11 +4,53 @@
 	$baseFont: 'Open Sans', sans-serif;
 	$headerFont: 'Ramaraja', serif;
 
-
 	$baseLineHeight: 1.4;
-
+	$headingLineHeight: 1.1;
+	
 	$baseFontSize: 20px;
-
 	$bodyFontSize: 18px;
-
 	$baseFontColour: #000;
+
+	// Set base font sizes
+
+	@mixin fontSizeS() {
+		$fontMin: 12px;
+		$fontMax: 14px;
+		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
+	}
+
+	@mixin fontSizeM() {
+		$fontMin: 14px;
+		$fontMax: 16px;
+		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
+	}
+
+	@mixin fontSizeBody() {
+		$fontMin: 16px;
+		$fontMax: 18px;
+		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
+	}
+
+	@mixin fontSizeL() {
+		$fontMin: 20px;
+		$fontMax: 24px;
+		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
+	}
+
+	@mixin fontSizeXL() {
+		$fontMin: 24px;
+		$fontMax: 28px;
+		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
+	}
+
+	@mixin fontSizeXXL() {
+		$fontMin: 28px;
+		$fontMax: 34px;
+		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
+	}
+
+	@mixin fontSizeXXXL() {
+		$fontMin: 36px;
+		$fontMax: 42px;
+		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
+	}

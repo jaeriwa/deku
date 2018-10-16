@@ -6,16 +6,37 @@
 	}
 
 	body {
+		@include fontSizeBody();
 		font-family: $baseFont;
-		font-size: $bodyFontSize;
 		margin: $large;
 		line-height: $baseLineHeight;
 	}
 
 	h1, h2, h3 {
 		font-family: $headerFont;
+		line-height: $headingLineHeight;
 	}
 
 	h2, h3 {
 		font-weight: 100;
+	}
+
+	h1 {
+		@include fontSizeXXXL();
+	}
+
+	h2 {
+		@include fontSizeXXXL();
+	}
+
+	h3 {
+		@include fontSizeXXL();
+	}
+
+	h4 {
+		@include fontSizeXL();
+	}
+
+	h5 {
+		@include fontSizeL();
 	}

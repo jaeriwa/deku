@@ -3,16 +3,7 @@
 
 	.c-cta {
 
-		@include fluid-type(50px, 100px, 320px, 768px);
-		$minimumSize: 50;
-		$maximumSize: 100;
-		$minimumVW: 320;
-		$maximumVW: 768;
-
-		//font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-	
-
-		//font-size: calc( $minimumSize + ( $maximumSize - $minimumSize ) * ( (100vw - $minimumVW ) / ( $maximumVW - $minimumVW )));
+		@include fontSizeS();
 
 		&--text {
 			border-bottom: 1px solid $baseFontColour;
