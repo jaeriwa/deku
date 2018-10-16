@@ -1,31 +1,31 @@
 
-// Tools
-// Media queries for responsivity
+	// Tools
+	// Media queries for responsivity
 
-$mobile: 350px;
-$smallTablet: 480px;
-$phablet: 550px;
-$tablet: 768px;
-$largeTablet: 920px;
-$desktop: 1024px;
-$wide: 1200px;
-$wider: 1400px;
-$ultraWide: 1600px;
-$superUltraWide: 2000px;
-$theWidest: 2500px;
+	$mobile: 350px;
+	$smallTablet: 480px;
+	$phablet: 550px;
+	$tablet: 768px;
+	$largeTablet: 920px;
+	$desktop: 1024px;
+	$wide: 1200px;
+	$wider: 1400px;
+	$ultraWide: 1600px;
+	$superUltraWide: 2000px;
+	$theWidest: 2500px;
 
-$breakpointsList: $mobile, $smallTablet, $phablet, $tablet, $largeTablet, $desktop, $wide, $wider, $ultraWide, $superUltraWide, $theWidest;
+	$breakpointsList: $mobile, $smallTablet, $phablet, $tablet, $largeTablet, $desktop, $wide, $wider, $ultraWide, $superUltraWide, $theWidest;
 
-@mixin breakpoints($size) {
+	@mixin breakpoints($size) {
 
-	@for $i from 1 through length($breakpointsList) {
+		@for $i from 1 through length($breakpointsList) {
 
-		@if $size == mobile {
-			@media (min-width: $mobile) { @content ; }
-		}
+			@if $size == mobile {
+				@media (min-width: $mobile) { @content ; }
+			}
 
-		@else if $size == nth($breakpointsList, $i) {
-			@media (min-width: nth($breakpointsList, $i)) { @content }
+			@else if $size == nth($breakpointsList, $i) {
+				@media (min-width: nth($breakpointsList, $i)) { @content }
+			}
 		}
 	}
-}

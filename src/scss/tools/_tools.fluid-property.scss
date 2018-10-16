@@ -1,0 +1,15 @@
+
+	// Tools
+
+	@mixin fluid-attribute($attribute, $minimumSize, $maximumSize, $minimumVW : $mobile, $maximumVW : $desktop) {
+
+		#{$attribute}: calc(#{rem-it($minimumSize)} + #{strip-unit($maximumSize - $minimumSize)} * ((100vw - #{rem-it($minimumVW)}) / #{strip-unit($maximumVW - $minimumVW)}));
+
+		@media screen and (max-width: $minimumVW) {
+			#{$attribute}: rem-it($minimumSize);
+		}
+
+		@media screen and (min-width: $maximumVW){
+			#{$attribute}: rem-it($maximumSize);
+		}
+	}

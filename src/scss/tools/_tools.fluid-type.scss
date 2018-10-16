@@ -5,13 +5,23 @@
 	// calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
 
 	@mixin fluid-type($minimumSize, $maximumSize, $minimumVW, $maximumVW) {;
-		font-size: calc(#{$minimumSize} + #{strip-unit($maximumSize - $minimumSize)} * ((100vw - #{$minimumVW}) / #{strip-unit($maximumVW - $minimumVW)}));
+		font-size: calc(#{rem-it($minimumSize)} + #{strip-unit($maximumSize - $minimumSize)} * ((100vw - #{rem-it($minimumVW)}) / #{strip-unit($maximumVW - $minimumVW)}));
 
 		@media screen and (max-width: $minimumVW) {
-			font-size: $minimumSize;
+			font-size: rem-it($minimumSize);
 		}
 
 		@media screen and (min-width: $maximumVW){
-			font-size: $maximumSize;
+			font-size: rem-it($maximumSize);;
 		}
 	}
+
+	// For use with repeated font sizes
+
+	@mixin fluid-type-size($fontSizeMap) {
+		$fontMin: map-get($fontSizeMap, 'min');
+		$fontMax: map-get($fontSizeMap, 'max');
+
+		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
+	}
+

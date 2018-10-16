@@ -3,10 +3,10 @@
 
 	.c-cta {
 
-		@include fontSizeS();
+		@include fluid-type-size($fontSizeS);
 
 		&--text {
-			border-bottom: 1px solid $baseFontColour;
+			border-bottom: 1px solid $primaColour;
 
 			&:hover {
 				border-bottom: 0;
@@ -14,17 +14,31 @@
 		}
 
 		&--box {
-			padding: 10px 20px;
+			@include fluid-attribute('padding-top', 8px, 10px);
+			@include fluid-attribute('padding-bottom', 8px, 10px);
+			@include fluid-attribute('padding-left', 15px, 25px);
+			@include fluid-attribute('padding-right', 15px, 25px);
 		}
 
-		&--black {
-			background-color: #000;
-			color: #fff;
-			border: 1px solid $baseFontColour;
+		&--prima {
+			background-color: $primaColour;
+			color: $lightColour;
+			border: 1px solid $primaColour;
 
 			&:hover {
 				background-color: transparent;
-				color: $baseFontColour;
+				color: $primaColour;
+			}
+		}
+
+		&--secon {
+			background-color: $seconColour;
+			color: $lightColour;
+			border: 1px solid $seconColour;
+
+			&:hover {
+				background-color: transparent;
+				color: $seconColour;
 			}
 		}
 	}

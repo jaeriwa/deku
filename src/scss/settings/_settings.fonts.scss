@@ -6,51 +6,50 @@
 
 	$baseLineHeight: 1.4;
 	$headingLineHeight: 1.1;
-	
+
 	$baseFontSize: 20px;
 	$bodyFontSize: 18px;
+	
 	$baseFontColour: #000;
 
 	// Set base font sizes
 
-	@mixin fontSizeS() {
-		$fontMin: 12px;
-		$fontMax: 14px;
-		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
-	}
+	$fontSizeS: (
+		'min' : 12px,
+		'max' : 14px
+	);
 
-	@mixin fontSizeM() {
-		$fontMin: 14px;
-		$fontMax: 16px;
-		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
-	}
+	$fontSizeM: (
+		'min' : 14px,
+		'max' : 16px
+	);
 
-	@mixin fontSizeBody() {
-		$fontMin: 16px;
-		$fontMax: 18px;
-		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
-	}
+	$fontSizeBody: (
+		'min' : 16px,
+		'max' : 18px		
+	);
 
-	@mixin fontSizeL() {
-		$fontMin: 20px;
-		$fontMax: 24px;
-		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
-	}
+	$fontSizeL: (
+		'min' : 20px,
+		'max' : 24px
+	);
 
-	@mixin fontSizeXL() {
-		$fontMin: 24px;
-		$fontMax: 28px;
-		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
-	}
+	$fontSizeXL: (
+		'min' : 24px,
+		'max' : 28px
+	);
 
-	@mixin fontSizeXXL() {
-		$fontMin: 28px;
-		$fontMax: 34px;
-		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
-	}
+	$fontSizeXXL: (
+		'min' : 28px,
+		'max' : 34px
+	);
 
-	@mixin fontSizeXXXL() {
-		$fontMin: 36px;
-		$fontMax: 42px;
-		@include fluid-type($fontMin, $fontMax, $mobile, $desktop);	
-	}
+	$fontSizeXXXL: (
+		'min' : 32px,
+		'max' : 40px
+	);
+
+	$fontSizeXXXXL: (
+		'min' : 34px,
+		'max' : 46px
+	);

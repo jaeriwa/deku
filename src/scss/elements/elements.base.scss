@@ -2,11 +2,12 @@
 	// Elements
 
 	html {
-		font-size: $baseFontSize;
+		font-size: 100%;
 	}
 
 	body {
-		@include fontSizeBody();
+		@include fluid-type-size($fontSizeBody);
+		color: $primaColour;
 		font-family: $baseFont;
 		margin: $large;
 		line-height: $baseLineHeight;
@@ -22,21 +23,24 @@
 	}
 
 	h1 {
-		@include fontSizeXXXL();
+		@include fluid-type-size($fontSizeXXXXL);
+		color: $seconColour;
 	}
 
 	h2 {
-		@include fontSizeXXXL();
+		@include fluid-type-size($fontSizeXXXL);
+		color: $tertiColour;
 	}
 
 	h3 {
-		@include fontSizeXXL();
+		@include fluid-type-size($fontSizeXXL);
+		color: $quartColour;
 	}
 
 	h4 {
-		@include fontSizeXL();
+		@include fluid-type-size($fontSizeXL);
 	}
 
 	h5 {
-		@include fontSizeL();
+		@include fluid-type-size($fontSizeL);
 	}
