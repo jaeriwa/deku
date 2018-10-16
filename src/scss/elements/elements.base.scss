@@ -1,21 +1,21 @@
 
-// Elements
+	// Elements
 
-html {
-	font-size: $baseFontSize;
-}
+	html {
+		font-size: $baseFontSize;
+	}
 
-body {
-	font-family: $baseFont;
-	font-size: $bodyFontSize;
-	margin: $large;
-	line-height: $baseLineHeight;
-}
+	body {
+		font-family: $baseFont;
+		font-size: $bodyFontSize;
+		margin: $large;
+		line-height: $baseLineHeight;
+	}
 
-h1, h2, h3 {
-	font-family: $headerFont;
-}
+	h1, h2, h3 {
+		font-family: $headerFont;
+	}
 
-h2, h3 {
-	font-weight: 100;
-}
+	h2, h3 {
+		font-weight: 100;
+	}

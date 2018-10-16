@@ -1,28 +1,39 @@
 
-//Components
+	//Components
 
-.c-cta {
+	.c-cta {
 
-	&--text {
-		border-bottom: 1px solid $baseFontColour;
+		@include fluid-type(50px, 100px, 320px, 768px);
+		$minimumSize: 50;
+		$maximumSize: 100;
+		$minimumVW: 320;
+		$maximumVW: 768;
 
-		&:hover {
-			border-bottom: 0;
+		//font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+	
+
+		//font-size: calc( $minimumSize + ( $maximumSize - $minimumSize ) * ( (100vw - $minimumVW ) / ( $maximumVW - $minimumVW )));
+
+		&--text {
+			border-bottom: 1px solid $baseFontColour;
+
+			&:hover {
+				border-bottom: 0;
+			}
+		}
+
+		&--box {
+			padding: 10px 20px;
+		}
+
+		&--black {
+			background-color: #000;
+			color: #fff;
+			border: 1px solid $baseFontColour;
+
+			&:hover {
+				background-color: transparent;
+				color: $baseFontColour;
+			}
 		}
 	}
-
-	&--box {
-		padding: 10px 20px;
-	}
-
-	&--black {
-		background-color: #000;
-		color: #fff;
-		border: 1px solid $baseFontColour;
-
-		&:hover {
-			background-color: transparent;
-			color: $baseFontColour;
-		}
-	}
-}
