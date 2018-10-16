@@ -16,16 +16,10 @@
 
 	$breakpointsList: $mobile, $smallTablet, $phablet, $tablet, $largeTablet, $desktop, $wide, $wider, $ultraWide, $superUltraWide, $theWidest;
 
-	@mixin breakpoints($size) {
-
+	@mixin breakpoints($point) {
 		@for $i from 1 through length($breakpointsList) {
-
-			@if $size == mobile {
-				@media (min-width: $mobile) { @content ; }
-			}
-
-			@else if $size == nth($breakpointsList, $i) {
-				@media (min-width: nth($breakpointsList, $i)) { @content }
+			@if $point = nth($breakpointsList, $i) {
+				@media (min-width: rem-it( nth($breakpointsList, $i) )) { @content ; }
 			}
 		}
 	}

@@ -2,5 +2,5 @@
 	// Objects
 
 	.o-container {
-		max-width: $maxSiteWidth;
+		max-width: rem-it($maxSiteWidth);
 	}
