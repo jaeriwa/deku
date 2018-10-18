@@ -1,0 +1,14 @@
+
+	// Objects
+
+	.o-third {
+		max-width: 75%;
+
+		&--center {
+			margin: 0 auto;
+		}
+
+		&--right {
+			margin: 0 0 0 auto;
+		}
+	}

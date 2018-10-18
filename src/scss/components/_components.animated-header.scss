@@ -1,0 +1,95 @@
+
+	//Components
+
+	.c-animated-header {
+
+		$animateTime: .5s;
+		$largeLine: 280px;
+		$largeLeft: 50px;
+		$mediumLine: 100px;
+		$mediumLeft: 150px;
+
+		@include fluid-type-size($fontSizeHeader);
+		color: $seconColour;
+		position: relative;
+		z-index: 100;
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 240px;
+			width: 80px;
+			display: block;
+			background-color: $primaColour;
+			height: 5px;
+			animation: animateTextLine $animateTime ease-in forwards;
+		}
+
+		&__sub {
+			@include fluid-type-size($fontSizeL);
+			font-weight: normal;
+			color: $tertiColour;
+		}
+
+		&__wrap {
+			position: relative;
+
+			&:before, &:after {
+				z-index: 10;
+				content: '';
+				width: 0;	
+				display: block;	
+				position: absolute;	
+				transform: rotate(110deg);
+				top: 100px;
+			}
+
+			&:before {
+				animation: animateBeforeLine $animateTime ($animateTime * 2) ease-in forwards;
+				background-color: $primaColour;	
+				left: $mediumLeft;
+				height: 2px;
+			}
+
+			&:after {
+				animation: animateAfterLine $animateTime $animateTime ease-in forwards;	
+				background-color: $seconColour;
+				left: $largeLeft;
+				height: 1px;
+			}
+		}
+
+		@keyframes animateBeforeLine {
+			0% {
+				width: 0;
+			}
+
+			100% {
+				width: $mediumLine;
+				left: $mediumLeft - ($mediumLine/2);
+			}
+		}
+
+		@keyframes animateAfterLine {
+			0% {
+				width: 0;
+			}
+
+			100% {
+				width: $largeLine;
+				left: $largeLeft - ($largeLine/2);
+			}
+		}
+
+		@keyframes animateTextLine {
+			0% {
+				width: 0;
+			}
+
+			100% {
+				width: $largeLine;
+				left: $largeLeft - ($largeLine/2);
+			}
+		}
+	}

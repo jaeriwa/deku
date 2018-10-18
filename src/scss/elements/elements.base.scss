@@ -7,9 +7,9 @@
 
 	body {
 		@include fluid-type-size($fontSizeBody);
+		@include fluid-attribute('margin', $spaceS, $spaceL);
 		color: $primaColour;
 		font-family: $baseFont;
-		margin: $large;
 		line-height: $baseLineHeight;
 	}
 

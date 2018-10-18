@@ -1,0 +1,88 @@
+	// Components
+
+	.animated-ripple {
+		
+		$circleStart: 1px;
+		$circleFinish: 800px;
+		$aniTime: 2s;
+		$delay: $aniTime - 1.5;
+		$aniType: ease-out;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: $circleFinish;
+		height: $circleFinish;
+		overflow: hidden;
+
+		&__wrap {
+			position: absolute;
+			top: -($circleFinish*0.5);
+			right: -($circleFinish*0.5);
+			width: $circleFinish;
+			height: $circleFinish;
+
+			@mixin circle {
+				visibility: hidden;
+				width: $circleStart;
+				height: $circleStart;
+				position: absolute;
+				display: block;
+				content: '';
+				border-color: $tertiColour;
+				border-radius: 50%;
+				border-style: solid;
+				border-width: 2px;
+				transform: translate(-50%, -50%);
+				left: 50%;
+				top: 50%;
+			}
+
+			@keyframes ani-circle {
+				0% {
+					border-width: 1px;
+					visibility: hidden;
+				}
+
+				100% {
+					border-width: 1px;
+					opacity: 0;
+					width: $circleFinish;
+					height: $circleFinish;
+					visibility: visible;
+				}
+			}
+
+			* {
+				@include circle;
+			}
+
+			:nth-child(1) {
+				animation: ani-circle $aniTime $aniType forwards;
+			}
+
+			:nth-child(2) {
+				animation: ani-circle $aniTime $delay $aniType forwards;
+			}
+
+			:nth-child(3) {
+				animation: ani-circle $aniTime $delay*2 $aniType forwards;
+			}
+
+			:nth-child(4) {
+				animation: ani-circle $aniTime $delay*2.5 $aniType forwards;
+			}
+
+			:nth-child(5) {
+				animation: ani-circle $aniTime $delay*3 $aniType forwards;
+			}
+
+			:nth-child(6) {
+				animation: ani-circle $aniTime $delay*4 $aniType forwards;
+			}
+
+			:nth-child(7) {
+				animation: ani-circle $aniTime*1.25 $delay*6 $aniType forwards;
+			}
+		}
+	}
