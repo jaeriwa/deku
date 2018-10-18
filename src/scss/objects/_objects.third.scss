@@ -1,8 +1,64 @@
 
 	// Objects
 
-	.o-third {
-		max-width: 75%;
+	.o-grid {
+
+		&__grid {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&__third {
+			width: 33.3%;
+
+			&--2 {
+				width: 66.6%;
+			}
+		}
+
+		&__half {
+			width: 50%;
+		}
+
+		&__quart {
+			width: 25%;
+
+			&--3 {
+				width: 75%;
+			}
+		}
+
+		&__fifth {
+			width: 20%;
+
+			&--2 {
+				width: 40%;
+			}
+
+			&--3 {
+				width: 60%;
+			}
+
+			&--4 {
+				width: 80%;
+			}
+		}
+
+		&__sixth {
+			width: 16.66%;
+
+			&--3 {
+				width: 49.98%;
+			}
+
+			&--4 {
+				width: 66.64%;
+			}
+
+			&--5 {
+				width: 83.3%;
+			}
+		}
 
 		&--center {
 			margin: 0 auto;

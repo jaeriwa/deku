@@ -6,24 +6,30 @@
 @import 'settings/settings';
 
 // Tools 
+// mixins and reusable stuff
 
 @import 'tools/tools';
 
 // Generic/Vendors 
+// third party scripts
 
 @import '~normalize-scss/sass/normalize';
 @include normalize();
 
 // Elements 
+// base element styling
 
 @import 'elements/elements';
 
 // Objects
+// design patterns and layouts
 
 @import 'objects/objects';
 
 // Components
+// reusable features and blocks
 
 @import 'components/components';
 
 // Utilities
+// overrides and helper classes

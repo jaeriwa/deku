@@ -10,6 +10,8 @@
 		$mediumLeft: 150px;
 
 		@include fluid-type-size($fontSizeHeader);
+		@include space('margin-top', 'xl');
+		@include space('margin-bottom', 'xl');
 		color: $seconColour;
 		position: relative;
 		z-index: 100;
