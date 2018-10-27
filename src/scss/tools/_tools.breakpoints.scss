@@ -14,12 +14,6 @@
 	$superUltraWide: 2000px;
 	$theWidest: 2500px;
 
-	$breakpointsList: $mobile, $smallTablet, $phablet, $tablet, $largeTablet, $desktop, $wide, $wider, $ultraWide, $superUltraWide, $theWidest;
-
 	@mixin breakpoints($point) {
-		@for $i from 1 through length($breakpointsList) {
-			@if $point = nth($breakpointsList, $i) {
-				@media (min-width: rem-it( nth($breakpointsList, $i) )) { @content ; }
-			}
-		}
+		@media (min-width: rem-it( $point) ) { @content ; }
 	}

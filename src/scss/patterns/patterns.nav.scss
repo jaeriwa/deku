@@ -1,0 +1,25 @@
+
+	// Patterns
+
+	.p-nav {
+		position: relative;
+		z-index: map-get($zindex, 'highest');
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+
+		&__list {
+			display: block;
+			margin: 0;
+			list-style-type: none;
+
+			@include breakpoints($desktop) {
+				display: flex;
+			}
+		}
+
+		&__item {
+			@include fluid-attribute('margin-right', 10px, 20px);
+
+		}
+	}
