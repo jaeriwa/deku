@@ -1,20 +1,16 @@
 
+	// Tools
+
 	// Javascript Media Queries
 
-	// Import media vars
+	// import breakpoints from settings
+
 	import mediaQuery from '../settings/mq';
 
-	// media query change
+	// function to check if window width matches the passed breakpoint
 
-	function breakpoints(mq) {
-		const mql = window.matchMedia(`(min-width: ${mq}px)`);
-
-		if (mql.matches) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
+	const breakpoints = mq => (
+		window.matchMedia(`(min-width: ${mq}px)`)
+	);
 
 	export default breakpoints;

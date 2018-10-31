@@ -1,40 +1,40 @@
 
 
-// Settings 
-// variables, fonts, etc.
+	// Settings 
+	// variables, fonts, etc.
 
-@import 'settings/settings';
+	@import 'settings/settings';
 
-// Tools 
-// mixins and reusable stuff
+	// Tools 
+	// mixins and reusable stuff
 
-@import 'tools/tools';
+	@import 'tools/tools';
 
-// Generic/Vendors 
-// third party scripts
+	// Generic/Vendors 
+	// third party scripts
 
-@import '~normalize-scss/sass/normalize';
-@include normalize();
+	@import '~normalize-scss/sass/normalize';
+	@include normalize();
 
-// Elements 
-// base element styling
+	// Elements 
+	// base element styling
 
-@import 'elements/elements';
+	@import 'elements/elements';
 
-// Objects
-// design patterns and layouts
+	// Objects
+	// design patterns and layouts
 
-@import 'objects/objects';
+	@import 'objects/objects';
 
-// Components
-// reusable features and blocks
+	// Components
+	// reusable features and blocks
 
-@import 'components/components';
+	@import 'components/components';
 
-// Patterns
-// components that are not really reusable/scalable
+	// Patterns
+	// components that are not really reusable/scalable
 
-@import 'patterns/patterns';
+	@import 'patterns/patterns';
 
-// Utilities
-// overrides and helper classes
+	// Utilities
+	// overrides and helper classes

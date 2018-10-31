@@ -4,7 +4,7 @@
 	// Variables for media queries
 
 	// If these variables are updated, they need updating in the
-	// Javascript settings file as well under settings/mq.js
+	// SCSS settings file as well under settings/mq.scss
 
 	const mediaQuery = {
 			"mobile": 350,
