@@ -3,6 +3,7 @@
 
 	import breakpoints from '../tools/mm';
 	import mediaQuery from '../settings/mq';
+	import debounce from '../tools/debounce';
 
 	const	navIcon = document.querySelector('.js-navicon'),
 			navCheck = document.querySelector('.js-navcheck');
@@ -28,8 +29,8 @@
 
 	// Event listeners
 
-	navCheck.addEventListener("click", addActive);
+	navCheck.addEventListener('click', addActive);
 
-	window.addEventListener('resize', resetCheckbox );
+	window.addEventListener('resize', debounce(resetCheckbox, 20));
 
 	resetCheckbox();

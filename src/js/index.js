@@ -10,6 +10,7 @@ import './settings/mq';
 // Tools
 
 import './tools/mm';
+import debounce from './tools/debounce';
 
 // Patterns
 
