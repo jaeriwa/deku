@@ -2,5 +2,13 @@
 	// Objects
 
 	.o-container {
+		@include fluid-space('padding-top', 'm');
+		@include fluid-space('padding-bottom', 'm');
+		@include fluid-attribute('padding-left', $spaceS, $spaceM, $mobile, $smallTablet);
+		@include fluid-attribute('padding-left', $spaceM, $spaceL, $smallTablet, $desktop, false);
+		@include fluid-attribute('padding-right', $spaceS, $spaceM, $mobile, $smallTablet);
+		@include fluid-attribute('padding-right', $spaceM, $spaceL, $smallTablet, $desktop, false);
 		max-width: rem-it($maxSiteWidth);
+		margin-left: auto;
+		margin-right: auto;
 	}

@@ -1,0 +1,18 @@
+
+	// Components
+	
+	.c-list {
+		@include fluid-space('padding-bottom', 's');
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+
+			&:before {
+				@include fluid-space('padding-bottom', 's');
+				content: '+';
+				padding-right: 20px;
+			}
+		}
+	}

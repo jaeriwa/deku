@@ -4,7 +4,7 @@
 	$baseFont: 'Open Sans', sans-serif;
 	$headerFont: 'Ramaraja', serif;
 
-	$baseLineHeight: 1.4;
+	$baseLineHeight: 1.6;
 	$headingLineHeight: 1.1;
 
 	$baseFontSize: 20px;
@@ -13,6 +13,11 @@
 	$baseFontColour: #000;
 
 	// Set base font sizes
+
+	$fontSizeXS: (
+		'min' : 10px,
+		'max' : 12px
+	);
 
 	$fontSizeS: (
 		'min' : 12px,
@@ -25,32 +30,32 @@
 	);
 
 	$fontSizeBody: (
-		'min' : 16px,
-		'max' : 18px		
+		'min' : 15px,
+		'max' : 17px		
 	);
 
 	$fontSizeL: (
-		'min' : 20px,
+		'min' : 18px,
 		'max' : 24px
 	);
 
 	$fontSizeXL: (
-		'min' : 24px,
+		'min' : 20px,
 		'max' : 28px
 	);
 
 	$fontSizeXXL: (
-		'min' : 28px,
+		'min' : 24px,
 		'max' : 34px
 	);
 
 	$fontSizeXXXL: (
-		'min' : 32px,
+		'min' : 28px,
 		'max' : 40px
 	);
 
 	$fontSizeXXXXL: (
-		'min' : 34px,
+		'min' : 32px,
 		'max' : 46px
 	);
 

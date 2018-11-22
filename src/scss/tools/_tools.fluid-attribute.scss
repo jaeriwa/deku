@@ -1,0 +1,29 @@
+
+	// Tools
+
+	// Put in any attribute, along with a minimum and maximum size. 
+	// The min and maximum size default to monile and desktop, but you can add in
+	// custom breakpoints if you wish (breakpoints in settins/mq).
+	// Lastly, if you don't want the minimum value to be default for bp prior to the minimum vw,
+	// then set it to false.
+
+	@mixin fluid-attribute($attribute, $minimumSize, $maximumSize, $minimumVW : $mobile, $maximumVW : $desktop, $bool: true) {
+
+		@if ( $bool == false ) {
+			@media screen and (min-width: $minimumVW) {
+				#{$attribute}: calc(#{rem-it($minimumSize)} + #{strip-unit($maximumSize - $minimumSize)} * ((100vw - #{rem-it($minimumVW)}) / #{strip-unit($maximumVW - $minimumVW)}));
+			}
+			@media screen and (min-width: $maximumVW){
+				#{$attribute}: rem-it($maximumSize);
+			}
+		} @else {
+			#{$attribute}: calc(#{rem-it($minimumSize)} + #{strip-unit($maximumSize - $minimumSize)} * ((100vw - #{rem-it($minimumVW)}) / #{strip-unit($maximumVW - $minimumVW)}));
+
+			@media screen and (max-width: $minimumVW) {
+				#{$attribute}: rem-it($minimumSize);
+			}
+			@media screen and (min-width: $maximumVW){
+				#{$attribute}: rem-it($maximumSize);
+			}
+		}
+	}

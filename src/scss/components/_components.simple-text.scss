@@ -1,0 +1,17 @@
+
+	//Components
+
+	.c-simple-text {
+
+		p {
+			@include fluid-attribute('margin-bottom', 20px, 30px);
+		}
+
+		a {
+			font-weight: bold;
+
+			&:hover {
+				border-bottom: 1px solid $seconColour;				
+			}
+		}
+	}

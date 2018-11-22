@@ -1,3 +1,4 @@
+
 	// Components
 
 	.animated-ripple {
@@ -8,16 +9,17 @@
 		$delay: $aniTime - 1.5;
 		$aniType: ease-out;
 
-		position: absolute;
-		top: 0;
+		position: fixed;
+		bottom: 0;
 		right: 0;
 		width: $circleFinish;
 		height: $circleFinish;
 		overflow: hidden;
+		z-index: map-get($zindex, 'lowest');
 
 		&__wrap {
 			position: absolute;
-			top: -($circleFinish*0.5);
+			bottom: -($circleFinish*0.5);
 			right: -($circleFinish*0.5);
 			width: $circleFinish;
 			height: $circleFinish;

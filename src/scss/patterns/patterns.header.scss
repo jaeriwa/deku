@@ -1,0 +1,7 @@
+
+	// Patterns
+
+	.p-header {
+		@include fluid-attribute('padding-top', $spaceS, $spaceL);
+		@include fluid-attribute('padding-bottom', $spaceS, $spaceL);
+	}

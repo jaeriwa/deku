@@ -1,19 +1,25 @@
 
 // Import all of the SCSS for Webpack
 
-import "../scss/main.scss";
+	import "../scss/main.scss";
 
 // Settings
 
-import './settings/mq';
+	// Media query settings
+
+	import './settings/mq';
 
 // Tools
 
-import './tools/mm';
-import debounce from './tools/debounce';
+	// Media query tool
+	import './tools/mm'; 
+
+	// Debouncer for events 
+	import debounce from './tools/debounce';
 
 // Patterns
 
-import './patterns/navigation'
+	import './patterns/navigation';
 
 // Components
+

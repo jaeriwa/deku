@@ -1,0 +1,7 @@
+
+	// Objects
+
+	.o-site-wrap {
+		@include fluid-attribute('margin-top', 5px, 10px);
+		background-color: $lightColour;
+	}

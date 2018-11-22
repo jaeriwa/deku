@@ -15,3 +15,15 @@
 	$ultraWide: 1600px;
 	$superUltraWide: 2000px;
 	$theWidest: 2500px;
+
+	$mediaQueries: $mobile, $smallTablet, $phablet, $tablet, $largeTablet, $desktop, $wide, $wider, $ultraWide, $superUltraWide, $theWidest;
+
+	@function getPrevious($value) {
+		// Get index then return the breakpoint index value just before it
+		$i: index($mediaQueries, $value) - 1;
+
+		// Using the index, find the breakpoint value previous to the one passed
+		$prev: nth($mediaQueries, $i);
+
+		@return $prev;
+	}

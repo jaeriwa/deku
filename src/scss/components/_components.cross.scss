@@ -1,0 +1,66 @@
+
+	// Components
+	
+	.c-cross {
+
+		$selector: &;
+		$crossWidth: 18px;
+		$crossHeight: 18px;
+
+		&__wrap {
+			@include fluid-type-size($fontSizeS);
+			display: none;
+			transition: all 0.5s ease-out;
+
+			&:hover {
+
+				#{$selector}__icon {
+
+					transform: rotate(180deg);
+
+					&:before, &:after {
+						top: $crossWidth/2 - 2;
+						background-color: $seconColour;
+					}
+				}
+			}
+
+			&.active {
+				display: flex;
+			}
+		}
+
+		&__icon {
+			@include fluid-attribute('margin-left', 10px, 15px);
+			align-self: center;
+			position: relative;
+			width: $crossWidth;
+			height: $crossHeight;
+			transition: all 0.5s ease-out;
+
+			&:before, &:after {
+				position: absolute;
+				top: $crossWidth/2;
+				display: block;
+				content: '';
+				width: $crossWidth;
+				height: 2px;
+				background-color: $darkColour;
+				transition: all 0.5s ease-out;
+			}
+
+			&:before {
+				transform: rotate(135deg);
+			}
+
+			&:after {
+				transform: rotate(-135deg);
+			}
+
+			&--light {
+				&:before, &:after {
+					background-color: $lightColour;
+				}
+			}
+		}
+	}

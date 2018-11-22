@@ -1,7 +1,7 @@
 
-	//Components
+	// Patterns
 
-	.c-animated-header {
+	.p-animated-header {
 
 		$animateTime: .5s;
 		$largeLine: 280px;
@@ -10,8 +10,8 @@
 		$mediumLeft: 150px;
 
 		@include fluid-type-size($fontSizeHeader);
-		@include space('margin-top', 'xl');
-		@include space('margin-bottom', 'xl');
+		@include fluid-space('margin-top', 'xl');
+		margin-bottom: 0;
 		color: $seconColour;
 		position: relative;
 		z-index: 100;
@@ -30,6 +30,7 @@
 
 		&__sub {
 			@include fluid-type-size($fontSizeL);
+			@include fluid-attribute('padding-bottom', $spaceS, $spaceM);
 			font-weight: normal;
 			color: $tertiColour;
 		}
@@ -38,13 +39,12 @@
 			position: relative;
 
 			&:before, &:after {
+				@include fluid-attribute('top', 30px, 100px);
 				z-index: 10;
 				content: '';
-				width: 0;	
 				display: block;	
 				position: absolute;	
 				transform: rotate(110deg);
-				top: 100px;
 			}
 
 			&:before {
@@ -56,7 +56,7 @@
 
 			&:after {
 				animation: animateAfterLine $animateTime $animateTime ease-in forwards;	
-				background-color: $seconColour;
+				background-color: $tertiColour;
 				left: $largeLeft;
 				height: 1px;
 			}

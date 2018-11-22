@@ -3,20 +3,37 @@
 
 	.p-nav {
 		$closeWidth: 20px;
-		$closeHeight: 20px;
+		$closeHeight: 16px;
+		@include fluid-attribute('margin-bottom', $spaceS, $spaceL);
+		font-family: $headerFont;
 
 		position: relative;
 		z-index: map-get($zindex, 'highest');
 		display: flex;
-		justify-content: flex-end;
+		justify-content: center;
 		width: 100%;
+		min-height: $closeHeight;
+
+		@include breakpoints($tablet) {
+			justify-content: flex-end;
+		}
 
 		&__check, &__close {
 			position: absolute;
 			right: 0;
-			top: 0;
-			width: $closeWidth;
-			height: $closeHeight;
+			top: 2px;
+
+			@include breakpoints($smallTablet) {
+				display: none;
+			}
+		}
+
+		&__menu {
+			font-family: $baseFont;
+			text-transform: uppercase;
+			position: absolute;
+			top: -1px;
+			right: 30px;
 
 			@include breakpoints($smallTablet) {
 				display: none;
@@ -24,7 +41,8 @@
 		}
 
 		&__close {
-			background-color: $primaColour;
+			width: $closeWidth;
+			height: $closeHeight;
 		}
 
 		&__icon {
@@ -32,8 +50,8 @@
 			position: relative;
 			width: $closeWidth;
 			height: $closeHeight;
-			background-color: $seconColour;
 			transition: all 0.5s ease-out;
+			border-bottom: 2px solid $seconColour;
 
 			&:before, &:after {
 				position: absolute;
@@ -46,14 +64,15 @@
 			}
 
 			&:after {
-				top: $closeHeight;
+				top: $closeHeight/2 - 1;
 			}
 
 			&.active {
 				background-color: $quintColour;
+				border-bottom-color: $quintColour;
 
 				&:before, &:after {
-					top: ($closeWidth/2);
+					top: ($closeHeight/2);
 					left: 3px;
 					width: $closeWidth - 6px;
 					background-color: $seconColour;
@@ -72,22 +91,30 @@
 		&__check {
 			cursor: pointer;
 			opacity: 0;
+			width: 80px;
+			height: 20px;
 
 			&:checked {
 				+ * {
-					display: block;
+					height: auto;
+					opacity: 1;
+					margin: 20px 0 0;
+					animation: animateMenu 0.5s linear;
 				}
 			}
 		}
 
 		&__list {
-			display: none;
-			margin: 0;
+			opacity: 0;
+			height: 0;
 			padding: 0;
 			width: 100%;
 			list-style-type: none;
 
 			@include breakpoints($smallTablet) {
+				margin: 0;
+				opacity: 1;
+				height: auto;
 				display: flex;
 				width: auto;
 			}
@@ -95,5 +122,95 @@
 
 		&__item {
 			@include fluid-attribute('margin-right', 10px, 20px);
+			transition: background-color 0.5s ease-out;
+			position: relative;
+			padding: 0 2px;
+
+			&:before {				
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: rem-it(24px);
+				width: 100%;
+				background-color: $tertiColour;
+				opacity: 0;
+			}
+
+			&:hover {
+
+				&:before {
+					animation: animateItem 0.5s ease-out forwards;
+				}
+			}
+		}
+
+		&__link {
+			display: block;
+			position: relative;
+
+			&:before {
+
+				@include breakpoints($smallTablet) {
+					content: '';
+					position: absolute;
+					left: 0;
+					bottom: -10px;
+					opacity: 0;
+					width: 100%;
+					height: 2px;
+					background-color: $seconColour;
+				}
+			}
+
+			&:hover {
+				color: $primaColour;
+
+				@include breakpoints($smallTablet) {
+
+					&:before {
+						animation: animateLinks 0.4s ease-out forwards;
+					}
+				}
+			}
+		}
+	}
+
+	@keyframes animateMenu {
+    	from {
+    		opacity: 0;
+    		margin: 0;
+    	}
+	    to {
+			opacity: 1;
+			margin: 20px 0 0;
+		}
+	}
+
+	@keyframes animateLinks {
+		0% {
+			opacity: 0;
+			bottom: -10px;
+		}
+		100% {
+			bottom: 0;
+			opacity: 1;
+		}
+	}
+
+	@keyframes animateItem {
+		0% {
+			opacity: 0;
+			width: 0;
+		}
+		80% {
+			opacity: 1;
+			width: 100%;
+		}
+
+		100% {
+			opacity: 1;
+			width: 100%;
+			background-color: $white;	
 		}
 	}

@@ -3,17 +3,26 @@
 
 	html {
 		font-size: 100%;
+		box-sizing: border-box;
+	}
+
+	*, *:before, *:after {
+		box-sizing: inherit;
 	}
 
 	body {
 		@include fluid-type-size($fontSizeBody);
-		@include fluid-attribute('margin', $spaceS, $spaceL);
+		background-color: $primaColour;
 		color: $primaColour;
 		font-family: $baseFont;
 		line-height: $baseLineHeight;
 	}
 
-	h1, h2, h3 {
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+	}
+
+	h1, h2, h3, h4 {
 		font-family: $headerFont;
 		line-height: $headingLineHeight;
 	}
@@ -23,24 +32,36 @@
 	}
 
 	h1 {
-		@include fluid-type-size($fontSizeXXXXL);
+		@include fluid-type-size($fontSizeXXXL);
 		color: $seconColour;
 	}
 
 	h2 {
-		@include fluid-type-size($fontSizeXXXL);
+		@include fluid-type-size($fontSizeXXL);
+		@include fluid-space('margin-bottom', 'm');
 		color: $tertiColour;
 	}
 
 	h3 {
-		@include fluid-type-size($fontSizeXXL);
+		@include fluid-type-size($fontSizeXL);
+		@include fluid-space('margin-bottom', 's');
 		color: $quartColour;
 	}
 
 	h4 {
-		@include fluid-type-size($fontSizeXL);
+		@include fluid-type-size($fontSizeL);
+		font-weight: normal;
 	}
 
 	h5 {
-		@include fluid-type-size($fontSizeL);
+		@include fluid-type-size($fontSizeBody);
+	}
+
+	h6 {
+		@include fluid-type-size($fontSizeS);
+	}
+
+	p {
+		@include fluid-space('margin-bottom', 'xs');
+		margin-top: 0;
 	}

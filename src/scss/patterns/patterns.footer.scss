@@ -1,0 +1,31 @@
+
+	// Patterns
+
+	.p-footer {
+		color: $lightColour;
+
+		&__header {
+			color: $lightColour;
+		}
+
+		&__grid {
+			@include fluid-attribute('margin-left', -10px, -30px, $tablet, $desktop, false);
+			@include fluid-attribute('margin-right', -10px, -30px, $tablet, $desktop, false);
+		}
+
+		&__content {			
+			@include fluid-attribute('padding-left', 10px, 30px, $tablet, $desktop, false);
+			@include fluid-attribute('padding-right', 10px, 30px, $tablet, $desktop, false);
+		}
+
+		&__contact-list {
+			display: flex;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				@include fluid-attribute('padding-left', 10px, 30px);
+			}
+		}
+	}

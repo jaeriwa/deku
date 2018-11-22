@@ -1,0 +1,31 @@
+
+	// Tools 
+
+	// Variables for the different sizes are under settings
+
+	@mixin fluid-space($type:padding, $size: $spaceM) {
+		@if $size == 'xxl' {
+			@include fluid-attribute($type, $spaceXL, $spaceXXL);
+		}
+		@if $size == 'xl' {
+			@include fluid-attribute($type, $spaceL, $spaceXL);
+		}
+		@if $size == 'l' {
+			@include fluid-attribute($type, $spaceM, $spaceL);
+		}
+		@if $size == 'm' {
+			@include fluid-attribute($type, $spaceS, $spaceM);
+		}
+		@if $size == 's' {
+			@include fluid-attribute($type, $spaceXS, $spaceS);
+		}
+		@if $size == 'xs' {
+			@include fluid-attribute($type, $spaceXXS, $spaceXS);
+		}
+		@if $size == 'xxs' {
+			@include fluid-attribute($type, $spaceXXXS, $spaceXXS);
+		}
+		@if $size == 'xxxs' {
+			@include fluid-attribute($type, 3px, $spaceXXXS);
+		}
+	}

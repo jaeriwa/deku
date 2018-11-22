@@ -13,11 +13,21 @@
 			}
 		}
 
-		&--box {
+		&--box {	
+			display: inline-block;
 			@include fluid-attribute('padding-top', 8px, 10px);
 			@include fluid-attribute('padding-bottom', 8px, 10px);
 			@include fluid-attribute('padding-left', 15px, 25px);
 			@include fluid-attribute('padding-right', 15px, 25px);
+		}
+
+		&--box-large {
+			display: inline-block;
+			@include fluid-type-size($fontSizeBody);
+			@include fluid-attribute('padding-top', 10px, 12px);
+			@include fluid-attribute('padding-bottom', 10px, 12px);
+			@include fluid-attribute('padding-left', 18px, 30px);
+			@include fluid-attribute('padding-right', 18px, 30px);
 		}
 
 		&--prima {
@@ -39,6 +49,39 @@
 			&:hover {
 				background-color: transparent;
 				color: $seconColour;
+			}
+		}
+
+		&--terti {
+			background-color: $tertiColour;
+			color: $lightColour;
+			border: 1px solid $tertiColour;
+
+			&:hover {
+				background-color: transparent;
+				color: $tertiColour;
+			}
+		}
+
+		&--quart {
+			background-color: $quartColour;
+			color: $lightColour;
+			border: 1px solid $quartColour;
+
+			&:hover {
+				background-color: transparent;
+				color: $quartColour;
+			}
+		}
+
+		&--quint {
+			background-color: $quintColour;
+			border: 1px solid $quintColour;
+			color: $darkColour;
+
+			&:hover {
+				background-color: transparent;
+				color: $quintColour;
 			}
 		}
 	}
