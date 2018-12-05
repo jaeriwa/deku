@@ -14,6 +14,9 @@
 	// Media query tool
 	import './tools/mm'; 
 
+	// Add and remove active class to InView elements
+	import inView from './tools/inview';
+
 	// Debouncer for events 
 	import debounce from './tools/debounce';
 
